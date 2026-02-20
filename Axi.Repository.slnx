@@ -1,0 +1,4 @@
+<Solution>
+    <Project Path="Axi.Repository.Specification/Axi.Repository.Specification.csproj"/>
+    <Project Path="Axi.Repository/Axi.Repository.csproj"/>
+</Solution>
