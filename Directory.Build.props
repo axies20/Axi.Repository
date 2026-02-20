@@ -1,0 +1,22 @@
+<Project>
+    <PropertyGroup>
+        <Authors>Axi</Authors>
+
+        <RepositoryType>git</RepositoryType>
+        <RepositoryUrl>https://github.com/axies20/Axi.Repository</RepositoryUrl>
+
+        <PackageLicenseExpression>MIT</PackageLicenseExpression>
+        <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+
+        <GenerateDocumentationFile>true</GenerateDocumentationFile>
+
+        <IncludeSymbols>true</IncludeSymbols>
+        <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <None Include="$(MSBuildThisFileDirectory)README.md"
+              Pack="true"
+              PackagePath="\"/>
+    </ItemGroup>
+</Project>
