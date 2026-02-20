@@ -13,25 +13,19 @@ public interface IBaseWriteRepository<in T> where T : class
     void Add(T entity);
 
     /// <summary>
-    /// Adds an entity to the data store asynchronously.
+    /// Asynchronously adds an entity to the repository.
     /// </summary>
-    /// <param name="entity">The entity to add to the data store.</param>
-    /// <param name="ct">The cancellation token to monitor for request cancellation.</param>
+    /// <param name="entity">The entity to add.</param>
+    /// <param name="ct">A token to monitor for cancellation requests.</param>
     /// <returns>A task that represents the asynchronous operation.</returns>
     Task AddAsync(T entity, CancellationToken ct);
 
     /// <summary>
     /// Asynchronously adds a collection of entities to the repository.
     /// </summary>
-    /// <param name="entities">
-    /// The collection of entities to be added to the repository.
-    /// </param>
-    /// <param name="ct">
-    /// A cancellation token to monitor for request cancellation.
-    /// </param>
-    /// <returns>
-    /// A task that represents the asynchronous operation of adding the collection of entities.
-    /// </returns>
+    /// <param name="entities">The collection of entities to add.</param>
+    /// <param name="ct">A token to monitor for cancellation requests.</param>
+    /// <returns>A task that represents the asynchronous operation.</returns>
     Task AddRangeAsync(IEnumerable<T> entities, CancellationToken ct);
 
     /// <summary>
@@ -43,7 +37,7 @@ public interface IBaseWriteRepository<in T> where T : class
     /// <summary>
     /// Updates the specified entity in the repository.
     /// </summary>
-    /// <param name="entity">The entity to be updated. Must be an instance of a class.</param>
+    /// <param name="entity">The entity to update.</param>
     void Update(T entity);
 
     /// <summary>
@@ -53,9 +47,8 @@ public interface IBaseWriteRepository<in T> where T : class
     void UpdateRange(IEnumerable<T> entities);
 
     /// <summary>
-    /// Removes the specified entity from the data store.
-    /// The changes are not persisted to the database until the save operation is performed.
+    /// Removes the specified entity from the repository.
     /// </summary>
-    /// <param name="entity">The entity to be removed from the data store.</param>
+    /// <param name="entity">The entity to remove.</param>
     void Delete(T entity);
 }

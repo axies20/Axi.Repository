@@ -6,62 +6,41 @@ using Microsoft.EntityFrameworkCore;
 namespace Axi.Repository.Repository;
 
 /// <summary>
-/// A base class that implements the read-only repository pattern for accessing and querying entities.
+/// Base implementation of read-only repository pattern for entities.
 /// </summary>
-/// <typeparam name="T">
-/// The type of the entity being operated on.
-/// </typeparam>
-/// <typeparam name="TDbContext">
-/// The type of the database context used for querying the database.
-/// Must inherit from <see cref="DbContext"/>.
-/// </typeparam>
+/// <typeparam name="T">Entity type.</typeparam>
+/// <typeparam name="TDbContext">Database context type.</typeparam>
 public class BaseReadRepository<T, TDbContext>(TDbContext dbContext) : IBaseReadRepository<T>
     where T : class
     where TDbContext : DbContext
 {
     /// <summary>
-    /// Asynchronously counts the number of entities in the repository matching the given predicate.
+    /// Counts entities matching the predicate.
     /// </summary>
-    /// <param name="predicate">
-    /// A function to test each entity for a condition.
-    /// </param>
-    /// <param name="cancellationToken">
-    /// A token to monitor for cancellation requests.
-    /// </param>
-    /// <returns>
-    /// A task that represents the asynchronous operation. The task result contains the count of entities matching the predicate.
-    /// </returns>
+    /// <param name="predicate">Filter condition.</param>
+    /// <param name="cancellationToken">Cancellation token.</param>
+    /// <returns>Count of matching entities.</returns>
     public Task<int> CountAsync(Expression<Func<T, bool>> predicate, CancellationToken cancellationToken = default)
     {
         return dbContext.Set<T>().CountAsync(predicate, cancellationToken);
     }
 
     /// <summary>
-    /// Asynchronously counts the total number of entities in the repository.
+    /// Counts all entities.
     /// </summary>
-    /// <param name="cancellationToken">
-    /// A token to monitor for cancellation requests.
-    /// </param>
-    /// <returns>
-    /// A task that represents the asynchronous operation. The task result contains the total number of entities in the repository.
-    /// </returns>
+    /// <param name="cancellationToken">Cancellation token.</param>
+    /// <returns>Total entity count.</returns>
     public Task<int> CountAsync(CancellationToken cancellationToken = default)
     {
         return dbContext.Set<T>().CountAsync(cancellationToken);
     }
 
     /// <summary>
-    /// Asynchronously retrieves the first entity from the repository that matches the specified predicate, or null if no such entity is found.
+    /// Retrieves first entity matching the predicate or null.
     /// </summary>
-    /// <param name="predicate">
-    /// A function to test each entity for a condition.
-    /// </param>
-    /// <param name="cancellationToken">
-    /// A token to monitor for cancellation requests.
-    /// </param>
-    /// <returns>
-    /// A task that represents the asynchronous operation. The task result contains the first matching entity or null if no match is found.
-    /// </returns>
+    /// <param name="predicate">Filter condition.</param>
+    /// <param name="cancellationToken">Cancellation token.</param>
+    /// <returns>First matching entity or null.</returns>
     public Task<T?> FirstOrDefaultAsync(Expression<Func<T, bool>> predicate,
         CancellationToken cancellationToken = default)
     {
@@ -69,40 +48,23 @@ public class BaseReadRepository<T, TDbContext>(TDbContext dbContext) : IBaseRead
     }
 
     /// <summary>
-    /// Asynchronously retrieves a list of entities from the repository that match the specified predicate.
+    /// Retrieves entities matching the predicate.
     /// </summary>
-    /// <param name="predicate">
-    /// A function to test each entity for a condition.
-    /// </param>
-    /// <param name="cancellationToken">
-    /// A token to monitor for cancellation requests.
-    /// </param>
-    /// <returns>
-    /// A task that represents the asynchronous operation. The task result contains a list of entities that match the predicate.
-    /// </returns>
+    /// <param name="predicate">Filter condition.</param>
+    /// <param name="cancellationToken">Cancellation token.</param>
+    /// <returns>List of matching entities.</returns>
     public Task<List<T>> ListAsync(Expression<Func<T, bool>> predicate, CancellationToken cancellationToken = default)
     {
         return dbContext.Set<T>().Where(predicate).ToListAsync(cancellationToken);
     }
 
     /// <summary>
-    /// Asynchronously retrieves a paginated list of entities from the repository
-    /// that match the specified predicate.
+    /// Retrieves paginated entities matching the predicate.
     /// </summary>
-    /// <param name="predicate">
-    /// An expression used to filter the entities.
-    /// </param>
-    /// <param name="request">
-    /// The pagination details, including page number and page size.
-    /// </param>
-    /// <param name="cancellationToken">
-    /// A token to monitor for cancellation requests.
-    /// </param>
-    /// <returns>
-    /// A task that represents the asynchronous operation. The task result contains
-    /// a paged result, including the list of entities, total count, page number,
-    /// and page size.
-    /// </returns>
+    /// <param name="predicate">Filter condition.</param>
+    /// <param name="request">Pagination parameters.</param>
+    /// <param name="cancellationToken">Cancellation token.</param>
+    /// <returns>Paginated result.</returns>
     public async Task<PagedResult<T>> ListAsync(Expression<Func<T, bool>> predicate, PageRequest request,
         CancellationToken cancellationToken = default)
     {
