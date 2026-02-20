@@ -12,7 +12,7 @@ namespace Axi.Repository.Specification.Repository;
 /// </summary>
 /// <typeparam name="T">Entity type.</typeparam>
 /// <typeparam name="TDbContext">Database context type.</typeparam>
-public class SpecificationReadRepository<T, TDbContext>(TDbContext dbContext)
+public abstract class SpecificationReadRepository<T, TDbContext>(TDbContext dbContext)
     : BaseReadRepository<T, TDbContext>(dbContext), ISpecificationReadRepository<T> where T : class
     where TDbContext : DbContext
 {

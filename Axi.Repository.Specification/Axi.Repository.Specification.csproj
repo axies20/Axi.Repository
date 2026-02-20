@@ -7,7 +7,7 @@
     </PropertyGroup>
     <PropertyGroup>
         <PackageId>Axi.Repository.Specification</PackageId>
-        <Version>0.1.0</Version>
+        <Version>0.1.1</Version>
         <Description>Specification pattern for EF Core (criteria/includes/order/paging).</Description>
         <PackageTags>specification;repository;efcore</PackageTags>
         <PackageReadmeFile>README.md</PackageReadmeFile>

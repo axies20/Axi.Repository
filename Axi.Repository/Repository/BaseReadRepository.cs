@@ -10,7 +10,7 @@ namespace Axi.Repository.Repository;
 /// </summary>
 /// <typeparam name="T">Entity type.</typeparam>
 /// <typeparam name="TDbContext">Database context type.</typeparam>
-public class BaseReadRepository<T, TDbContext>(TDbContext dbContext) : IBaseReadRepository<T>
+public abstract class BaseReadRepository<T, TDbContext>(TDbContext dbContext) : IBaseReadRepository<T>
     where T : class
     where TDbContext : DbContext
 {

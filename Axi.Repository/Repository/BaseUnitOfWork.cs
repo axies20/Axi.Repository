@@ -7,7 +7,7 @@ namespace Axi.Repository.Repository;
 /// Base implementation of unit of work pattern.
 /// </summary>
 /// <typeparam name="TDbContext">Database context type.</typeparam>
-public class BaseUnitOfWork<TDbContext>(TDbContext dbContext) : IBaseUnitOfWork where TDbContext : DbContext
+public abstract class BaseUnitOfWork<TDbContext>(TDbContext dbContext) : IBaseUnitOfWork where TDbContext : DbContext
 {
     /// <summary>
     /// Releases database context resources.

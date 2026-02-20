@@ -8,7 +8,7 @@ namespace Axi.Repository.Repository;
 /// </summary>
 /// <typeparam name="T">Entity type.</typeparam>
 /// <typeparam name="TDbContext">Database context type.</typeparam>
-public class BaseWriteRepository<T, TDbContext>(TDbContext dbContext) : IBaseWriteRepository<T>
+public abstract class BaseWriteRepository<T, TDbContext>(TDbContext dbContext) : IBaseWriteRepository<T>
     where T : class
     where TDbContext : DbContext
 {
