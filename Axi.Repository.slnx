@@ -1,4 +1,9 @@
 <Solution>
-    <Project Path="Axi.Repository.Specification/Axi.Repository.Specification.csproj"/>
-    <Project Path="Axi.Repository/Axi.Repository.csproj"/>
+    <Folder Name="/Source/">
+        <Project Path="Source/Axi.Repository.Specification/Axi.Repository.Specification.csproj"/>
+        <Project Path="Source/Axi.Repository/Axi.Repository.csproj"/>
+    </Folder>
+    <Folder Name="/Tests/">
+        <Project Path="Tests/Axi.Repository.Test/Axi.Repository.Test.csproj"/>
+    </Folder>
 </Solution>
