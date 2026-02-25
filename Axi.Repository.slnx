@@ -1,9 +1,10 @@
 <Solution>
     <Folder Name="/Source/">
-        <Project Path="Source/Axi.Repository.Specification/Axi.Repository.Specification.csproj"/>
-        <Project Path="Source/Axi.Repository/Axi.Repository.csproj"/>
+        <Project Path="Source/Axi.Repository.Specification/Axi.Repository.Specification.csproj" />
+        <Project Path="Source/Axi.Repository/Axi.Repository.csproj" />
     </Folder>
     <Folder Name="/Tests/">
-        <Project Path="Tests/Axi.Repository.Test/Axi.Repository.Test.csproj"/>
+        <Project Path="Tests/Axi.Repository.Specification.Test/Axi.Repository.Specification.Test.csproj" />
+        <Project Path="Tests/Axi.Repository.Test/Axi.Repository.Test.csproj" />
     </Folder>
 </Solution>
