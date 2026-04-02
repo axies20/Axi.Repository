@@ -51,4 +51,10 @@ public interface IBaseWriteRepository<in T> where T : class
     /// </summary>
     /// <param name="entity">The entity to remove.</param>
     void Delete(T entity);
+
+    /// <summary>
+    /// Removes a collection of entities from the repository.
+    /// </summary>
+    /// <param name="entities">The collection of entities to remove.</param>
+    void DeleteRange(IEnumerable<T> entities);
 }

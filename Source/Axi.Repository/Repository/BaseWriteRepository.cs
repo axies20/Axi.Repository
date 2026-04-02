@@ -76,4 +76,13 @@ public abstract class BaseWriteRepository<T, TDbContext>(TDbContext dbContext) :
     {
         dbContext.Set<T>().Remove(entity);
     }
+
+    /// <summary>
+    /// Deletes multiple entities from the repository.
+    /// </summary>
+    /// <param name="entities">Entities to delete.</param>
+    public void DeleteRange(IEnumerable<T> entities)
+    {
+        dbContext.Set<T>().RemoveRange(entities);
+    }
 }
