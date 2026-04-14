@@ -228,7 +228,7 @@ var filteredProducts = inMemoryEvaluator.Evaluate(products, spec);
 
 ## License
 
-MIT License - see [LICENSE](LICENSE) file for details.
+MIT License – see [LICENSE](LICENSE) file for details.
 
 ## Contributing
 
