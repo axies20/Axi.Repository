@@ -3,38 +3,39 @@
 namespace Axi.Repository.Specification.Abstractions.Specification;
 
 /// <summary>
-/// Specification interface for query criteria, includes, ordering, and query behaviors.
+/// Describes query criteria, include paths, ordering, and Entity Framework query behavior.
 /// </summary>
-/// <typeparam name="T">Entity type.</typeparam>
+/// <typeparam name="T">The entity type described by the specification.</typeparam>
 public interface ISpecification<T>
 {
     /// <summary>
-    /// Filter criteria expression.
+    /// Gets the filter criteria expression, or <see langword="null"/> when no filter is defined.
     /// </summary>
     Expression<Func<T, bool>>? Criteria { get; }
 
     /// <summary>
-    /// Navigation paths for eager loading.
+    /// Gets the navigation paths to include for eager loading.
     /// </summary>
     IReadOnlyList<string> IncludePaths { get; }
 
     /// <summary>
-    /// Ascending order expression.
+    /// Gets the ascending ordering expression, or <see langword="null"/> when it is not configured.
     /// </summary>
     Expression<Func<T, object>>? OrderBy { get; }
 
     /// <summary>
-    /// Descending order expression.
+    /// Gets the descending ordering expression, or <see langword="null"/> when it is not configured.
     /// </summary>
+    /// <remarks>If both ordering expressions are configured, ascending ordering takes precedence.</remarks>
     Expression<Func<T, object>>? OrderByDescending { get; }
 
     /// <summary>
-    /// Enable split query behavior.
+    /// Gets whether split-query behavior is requested when include paths are configured.
     /// </summary>
     bool AsSplitQuery { get; }
 
     /// <summary>
-    /// Enable no-tracking behavior for read-only queries.
+    /// Gets whether Entity Framework change tracking should be disabled.
     /// </summary>
     bool AsNoTracking { get; }
 }

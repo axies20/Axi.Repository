@@ -3,10 +3,6 @@ using LinqKit;
 
 namespace Axi.Repository.Specification.Abstractions.Specification;
 
-/// <summary>
-/// Base class for query specifications with criteria building support.
-/// </summary>
-/// <typeparam name="T">Entity type.</typeparam>
 public abstract partial class BaseSpecification<T>
 {
     private ExpressionStarter<T>? _criteria;
@@ -14,9 +10,9 @@ public abstract partial class BaseSpecification<T>
     private partial Expression<Func<T, bool>>? BuildCriteria() => _criteria;
 
     /// <summary>
-    /// Adds AND condition to criteria.
+    /// Combines a predicate with the current criteria using a logical AND operation.
     /// </summary>
-    /// <param name="predicate">Filter condition.</param>
+    /// <param name="predicate">The predicate to add.</param>
     protected virtual void Where(Expression<Func<T, bool>> predicate)
     {
         if (_criteria is not null)
@@ -26,9 +22,9 @@ public abstract partial class BaseSpecification<T>
     }
 
     /// <summary>
-    /// Adds OR condition to criteria.
+    /// Combines a predicate with the current criteria using a logical OR operation.
     /// </summary>
-    /// <param name="predicate">Filter condition.</param>
+    /// <param name="predicate">The predicate to add.</param>
     protected virtual void OrWhere(Expression<Func<T, bool>> predicate)
     {
         if (_criteria is null)
@@ -38,20 +34,20 @@ public abstract partial class BaseSpecification<T>
     }
 
     /// <summary>
-    /// Adds AND condition if condition is true.
+    /// Adds a predicate using a logical AND operation when the condition is <see langword="true"/>.
     /// </summary>
-    /// <param name="condition">Determines if predicate is applied.</param>
-    /// <param name="predicate">Filter condition.</param>
+    /// <param name="condition">Whether to add the predicate.</param>
+    /// <param name="predicate">The predicate to add.</param>
     protected virtual void WhereIf(bool condition, Expression<Func<T, bool>> predicate)
     {
         if (condition) Where(predicate);
     }
 
     /// <summary>
-    /// Adds OR condition if condition is true.
+    /// Adds a predicate using a logical OR operation when the condition is <see langword="true"/>.
     /// </summary>
-    /// <param name="condition">Determines if predicate is applied.</param>
-    /// <param name="predicate">Filter condition.</param>
+    /// <param name="condition">Whether to add the predicate.</param>
+    /// <param name="predicate">The predicate to add.</param>
     protected virtual void OrWhereIf(bool condition, Expression<Func<T, bool>> predicate)
     {
         if (condition)
@@ -59,8 +55,8 @@ public abstract partial class BaseSpecification<T>
     }
 
     /// <summary>
-    /// Adds filter criteria.
+    /// Adds a predicate to the current criteria using a logical AND operation.
     /// </summary>
-    /// <param name="criteria">Filter condition.</param>
+    /// <param name="criteria">The predicate to add.</param>
     protected virtual void AddCriteria(Expression<Func<T, bool>> criteria) => Where(criteria);
 }

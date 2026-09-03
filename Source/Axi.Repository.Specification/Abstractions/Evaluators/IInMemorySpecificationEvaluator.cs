@@ -8,11 +8,11 @@ namespace Axi.Repository.Specification.Abstractions.Evaluators;
 public interface IInMemorySpecificationEvaluator
 {
     /// <summary>
-    /// Applies specification to a source collection.
+    /// Applies all supported operations from a specification to a source collection.
     /// </summary>
-    /// <typeparam name="T">Entity type.</typeparam>
-    /// <param name="source">Source collection.</param>
-    /// <param name="spec">Specification to apply.</param>
-    /// <returns>Filtered and ordered collection.</returns>
+    /// <typeparam name="T">The entity type.</typeparam>
+    /// <param name="source">The source collection.</param>
+    /// <param name="spec">The specification to apply.</param>
+    /// <returns>The collection after all supported specification operations have been applied.</returns>
     IEnumerable<T> Evaluate<T>(IEnumerable<T> source, ISpecification<T> spec);
 }

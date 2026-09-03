@@ -12,7 +12,9 @@ internal static class MemberPath
     /// </summary>
     /// <param name="expr">Member access expression.</param>
     /// <returns>Dot-separated path string.</returns>
-    /// <exception cref="InvalidOperationException">Invalid member access expression.</exception>
+    /// <exception cref="InvalidOperationException">
+    /// <paramref name="expr"/> does not contain a supported member-access path.
+    /// </exception>
     public static string Of(Expression expr)
     {
         if (expr is UnaryExpression u && expr.NodeType == ExpressionType.Convert)

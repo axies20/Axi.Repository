@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore;
 namespace Axi.Repository.Specification.Evaluators;
 
 /// <summary>
-/// Applies no-tracking behavior to queries.
+/// Applies no-tracking behavior when it is enabled by the specification.
 /// </summary>
 internal sealed class NoTrackingEvaluator : IEvaluator
 {

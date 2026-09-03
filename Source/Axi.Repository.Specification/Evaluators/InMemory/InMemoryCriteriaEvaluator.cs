@@ -12,8 +12,12 @@ public sealed class InMemoryCriteriaEvaluator : IInMemoryEvaluator
     {
     }
 
+    /// <summary>
+    /// Gets the shared stateless evaluator instance.
+    /// </summary>
     public static InMemoryCriteriaEvaluator Instance { get; } = new();
 
+    /// <inheritdoc />
     public IEnumerable<T> Evaluate<T>(IEnumerable<T> query, ISpecification<T> spec)
     {
         if (spec.Criteria is null)

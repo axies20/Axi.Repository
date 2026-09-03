@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore;
 namespace Axi.Repository.Specification.Evaluators;
 
 /// <summary>
-/// Applies split query behavior when includes are present.
+/// Applies split-query behavior when it is enabled and include paths are present.
 /// </summary>
 internal sealed class SplitQueryEvaluator : IEvaluator
 {

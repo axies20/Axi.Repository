@@ -4,7 +4,7 @@ using Axi.Repository.Specification.Abstractions.Specification;
 namespace Axi.Repository.Specification.Evaluators;
 
 /// <summary>
-/// Applies ordering to queries.
+/// Applies configured ordering to queries, preferring ascending ordering when both directions are configured.
 /// </summary>
 internal sealed class OrderingEvaluator : IEvaluator
 {

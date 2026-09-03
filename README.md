@@ -8,10 +8,10 @@ queries.
 
 - **Repository Pattern**: Generic read/write repository interfaces with base implementations
 - **Specification Pattern**: Type-safe query specifications with fluent API
-- **Pagination Support**: Built-in paginated queries with `PageRequest` and `PagedResult<T>`
+- **Pagination Support**: Offset and cursor-based pagination with deterministic ordering
 - **Eager Loading**: Expression-based include paths for related entities
 - **Query Optimization**: No-tracking queries and split query support
-- **Unit of Work**: Transaction management with `IBaseUnitOfWork`
+- **Unit of Work**: Persistence coordination with `IUnitOfWork`
 - **.NET 10.0**: Built for the latest .NET platform
 - **EF Core 10.0**: Full Entity Framework Core support
 
@@ -21,9 +21,11 @@ queries.
 
 Core repository abstractions and base implementations:
 
-- `IBaseReadRepository<T>` - Read operations (count, list, first, any)
-- `IBaseWriteRepository<T>` - Write operations (add, update, delete)
-- `IBaseUnitOfWork` - Transaction and commit management
+- `IReadRepository<T>` / `ReadRepositoryBase<T, TDbContext>` - Read operations
+- `IPagedReadRepository<T>` / `PagedReadRepositoryBase<T, TDbContext>` - Offset pagination
+- `ICursorReadRepository<T, TCursor>` / `CursorReadRepositoryBase<T, TCursor, TDbContext>` - Keyset pagination
+- `IWriteRepository<T>` / `WriteRepositoryBase<T, TDbContext>` - Write operations
+- `IUnitOfWork` / `UnitOfWorkBase<TDbContext>` - Save and lifetime management
 - `PageRequest` / `PagedResult<T>` - Pagination models
 
 ### Axi.Repository.Specification
@@ -33,6 +35,7 @@ Specification pattern implementation for EF Core:
 - `ISpecification<T>` - Query specification interface
 - `BaseSpecification<T>` - Fluent specification builder
 - `ISpecificationReadRepository<T>` - Repository with specification support
+- `SpecificationReadRepositoryBase<T, TDbContext>` - EF Core specification repository base
 - Built-in evaluators for criteria, ordering, includes, split queries
 
 ## Installation
@@ -62,7 +65,7 @@ public class Product
 ### 2. Create Repository
 
 ```csharp
-public class ProductRepository : SpecificationReadRepository<Product, YourDbContext>
+public class ProductRepository : SpecificationReadRepositoryBase<Product, YourDbContext>
 {
     public ProductRepository(YourDbContext context) : base(context) { }
 }
@@ -103,23 +106,41 @@ var product = await repository.FirstOrDefaultAsync(
 
 ## Core Interfaces
 
-### IBaseReadRepository<T>
+### IReadRepository<T>
 
 ```csharp
 Task<int> CountAsync(Expression<Func<T, bool>> predicate, CancellationToken ct = default);
+Task<int> CountAsync(CancellationToken ct = default);
+Task<long> LongCountAsync(Expression<Func<T, bool>> predicate, CancellationToken ct = default);
+Task<long> LongCountAsync(CancellationToken ct = default);
 Task<T?> FirstOrDefaultAsync(Expression<Func<T, bool>> predicate, CancellationToken ct = default);
-Task<List<T>> ListAsync(Expression<Func<T, bool>> predicate, CancellationToken ct = default);
-Task<PagedResult<T>> ListAsync(Expression<Func<T, bool>> predicate, PageRequest page, CancellationToken ct = default);
 Task<bool> AnyAsync(Expression<Func<T, bool>> predicate, CancellationToken ct = default);
 ```
 
-### IBaseWriteRepository<T>
+### Pagination repositories
+
+```csharp
+Task<PagedResult<T>> ListAsync(
+    Expression<Func<T, bool>> predicate,
+    PageRequest page,
+    CancellationToken ct = default);
+
+Task<CursorResult<T, TCursor>> ListAsync(
+    Expression<Func<T, bool>> predicate,
+    CursorRequest<TCursor> request,
+    CancellationToken ct = default);
+```
+
+Derived page repositories provide `OrderByPage`. Derived cursor repositories provide
+`ApplyAfter`, `OrderByCursor`, and `GetCursor`, allowing simple or composite value-type cursors.
+
+### IWriteRepository<T>
 
 ```csharp
 void Add(T entity);
-Task AddAsync(T entity, CancellationToken ct);
+Task AddAsync(T entity, CancellationToken cancellationToken);
 void AddRange(IEnumerable<T> entities);
-Task AddRangeAsync(IEnumerable<T> entities, CancellationToken ct);
+Task AddRangeAsync(IEnumerable<T> entities, CancellationToken cancellationToken);
 void Update(T entity);
 void UpdateRange(IEnumerable<T> entities);
 void Delete(T entity);
@@ -190,8 +211,8 @@ var result = await repository.ListAsync(predicate, pageRequest, ct);
 ```csharp
 public class OrderService
 {
-    private readonly IBaseUnitOfWork _unitOfWork;
-    private readonly IBaseWriteRepository<Order> _orderRepo;
+    private readonly IUnitOfWork _unitOfWork;
+    private readonly IWriteRepository<Order> _orderRepo;
 
     public async Task CreateOrder(Order order, CancellationToken ct)
     {

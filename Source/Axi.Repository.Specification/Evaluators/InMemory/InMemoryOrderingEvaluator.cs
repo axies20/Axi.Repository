@@ -4,7 +4,7 @@ using Axi.Repository.Specification.Abstractions.Specification;
 namespace Axi.Repository.Specification.Evaluators.InMemory;
 
 /// <summary>
-/// Applies ordering to in-memory collections.
+/// Applies configured ordering to in-memory collections, preferring ascending ordering when both directions are configured.
 /// </summary>
 public sealed class InMemoryOrderingEvaluator : IInMemoryEvaluator
 {
@@ -12,8 +12,12 @@ public sealed class InMemoryOrderingEvaluator : IInMemoryEvaluator
     {
     }
 
+    /// <summary>
+    /// Gets the shared stateless evaluator instance.
+    /// </summary>
     public static InMemoryOrderingEvaluator Instance { get; } = new();
 
+    /// <inheritdoc />
     public IEnumerable<T> Evaluate<T>(IEnumerable<T> query, ISpecification<T> spec)
     {
         if (spec.OrderBy is not null)

@@ -19,12 +19,12 @@ internal static class EfSpecificationEvaluator
     ];
 
     /// <summary>
-    /// Applies specification to query.
+    /// Applies all supported operations from a specification to a query.
     /// </summary>
-    /// <typeparam name="T">Entity type.</typeparam>
-    /// <param name="query">Source query.</param>
-    /// <param name="spec">Specification to apply.</param>
-    /// <returns>Modified query.</returns>
+    /// <typeparam name="T">The entity type.</typeparam>
+    /// <param name="query">The source query.</param>
+    /// <param name="spec">Specification to apply, or <see langword="null"/> to leave the query unchanged.</param>
+    /// <returns>The query after all supported specification operations have been applied.</returns>
     public static IQueryable<T> Apply<T>(IQueryable<T> query, ISpecification<T>? spec) where T : class
     {
         if (spec is null) return query;
@@ -36,12 +36,12 @@ internal static class EfSpecificationEvaluator
     }
 
     /// <summary>
-    /// Applies only filter criteria from specification.
+    /// Applies only filter criteria from a specification.
     /// </summary>
-    /// <typeparam name="T">Entity type.</typeparam>
-    /// <param name="query">Source query.</param>
-    /// <param name="spec">Specification to apply.</param>
-    /// <returns>Query with criteria applied.</returns>
+    /// <typeparam name="T">The entity type.</typeparam>
+    /// <param name="query">The source query.</param>
+    /// <param name="spec">Specification to apply, or <see langword="null"/> to leave the query unchanged.</param>
+    /// <returns>The query with the specification's filter criteria applied.</returns>
     public static IQueryable<T> ApplyCriteriaOnly<T>(IQueryable<T> query, ISpecification<T>? spec) where T : class
     {
         if (spec is null) return query;

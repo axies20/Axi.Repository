@@ -2,27 +2,25 @@
 
 namespace Axi.Repository.Specification.Abstractions.Specification;
 
-/// <summary>
-/// Base class for query specifications with include path support.
-/// </summary>
-/// <typeparam name="T">Entity type.</typeparam>
 public abstract partial class BaseSpecification<T>
 {
     /// <summary>
-    /// Includes related entity for eager loading.
+    /// Adds a reference navigation path for eager loading.
     /// </summary>
-    /// <typeparam name="TNext">Related entity type.</typeparam>
-    /// <param name="nav">Navigation expression.</param>
-    /// <returns>Include a chain for further chaining.</returns>
+    /// <typeparam name="TNext">The related entity type.</typeparam>
+    /// <param name="nav">An expression selecting the navigation property.</param>
+    /// <returns>An include chain that can be extended with nested navigations.</returns>
+    /// <exception cref="InvalidOperationException"><paramref name="nav"/> is not a supported member-access expression.</exception>
     protected IncludeChain<TNext> Include<TNext>(Expression<Func<T, TNext>> nav)
         => AddIncludeChain<TNext>(MemberPath.Of(nav.Body));
 
     /// <summary>
-    /// Includes collection navigation for eager loading.
+    /// Adds a collection navigation path for eager loading.
     /// </summary>
-    /// <typeparam name="TElement">Collection element type.</typeparam>
-    /// <param name="nav">Navigation expression.</param>
-    /// <returns>Include a chain for further chaining.</returns>
+    /// <typeparam name="TElement">The collection element type.</typeparam>
+    /// <param name="nav">An expression selecting the collection navigation property.</param>
+    /// <returns>An include chain that can be extended with nested navigations.</returns>
+    /// <exception cref="InvalidOperationException"><paramref name="nav"/> is not a supported member-access expression.</exception>
     protected IncludeChain<TElement> IncludeMany<TElement>(Expression<Func<T, IEnumerable<TElement>>> nav)
         => AddIncludeChain<TElement>(MemberPath.Of(nav.Body));
 
@@ -36,9 +34,9 @@ public abstract partial class BaseSpecification<T>
     }
 
     /// <summary>
-    /// Chainable mechanism for nested include paths.
+    /// Builds a nested eager-loading path.
     /// </summary>
-    /// <typeparam name="TCurrent">Current type in chain.</typeparam>
+    /// <typeparam name="TCurrent">The entity type at the current position in the path.</typeparam>
     public sealed class IncludeChain<TCurrent>
     {
         private readonly int _index;
@@ -55,11 +53,12 @@ public abstract partial class BaseSpecification<T>
         }
 
         /// <summary>
-        /// Chains next level of navigation.
+        /// Adds a reference navigation to the current include path.
         /// </summary>
-        /// <typeparam name="TNext">Next entity type.</typeparam>
-        /// <param name="nav">Navigation expression.</param>
-        /// <returns>Include a chain for further chaining.</returns>
+        /// <typeparam name="TNext">The related entity type.</typeparam>
+        /// <param name="nav">An expression selecting the navigation property.</param>
+        /// <returns>An include chain positioned at the added navigation.</returns>
+        /// <exception cref="InvalidOperationException"><paramref name="nav"/> is not a supported member-access expression.</exception>
         public IncludeChain<TNext> Then<TNext>(Expression<Func<TCurrent, TNext>> nav)
         {
             _path = $"{_path}.{MemberPath.Of(nav.Body)}";
@@ -68,11 +67,12 @@ public abstract partial class BaseSpecification<T>
         }
 
         /// <summary>
-        /// Chains collection navigation.
+        /// Adds a collection navigation to the current include path.
         /// </summary>
-        /// <typeparam name="TNext">Collection element type.</typeparam>
-        /// <param name="nav">Navigation expression.</param>
-        /// <returns>Include a chain for further chaining.</returns>
+        /// <typeparam name="TNext">The collection element type.</typeparam>
+        /// <param name="nav">An expression selecting the collection navigation property.</param>
+        /// <returns>An include chain positioned at the added navigation.</returns>
+        /// <exception cref="InvalidOperationException"><paramref name="nav"/> is not a supported member-access expression.</exception>
         public IncludeChain<TNext> ThenMany<TNext>(Expression<Func<TCurrent, IEnumerable<TNext>>> nav)
         {
             _path = $"{_path}.{MemberPath.Of(nav.Body)}";
