@@ -126,8 +126,8 @@
     "semantic_hash": "65fb1601f7b87684d3d3bd73af6f10b9"
   },
   "Source/Axi.Repository/Models/CursorResult.cs": {
-    "mtime": 1788478566.5692575,
-    "seen": 1788478791.5955486,
+    "mtime": 1788480328.1428876,
+    "seen": 1788481093.759745,
     "ast_hash": "a8cd0136ee67f64eb2c21d4987a9287a",
     "semantic_hash": "a8cd0136ee67f64eb2c21d4987a9287a"
   },
@@ -156,34 +156,34 @@
     "semantic_hash": "16bf16559b5367b4b797042e11009ae8"
   },
   "Tests/Axi.Repository.Specification.Test/Models/Address.cs": {
-    "mtime": 1788474721.0556679,
-    "seen": 1788476664.2237346,
-    "ast_hash": "0a409739c1bd06f2802d7cb7f36ae9fe",
-    "semantic_hash": "0a409739c1bd06f2802d7cb7f36ae9fe"
+    "mtime": 1788481086.201,
+    "seen": 1788481093.7597575,
+    "ast_hash": "977c6468d52939e28237098156d59fa8",
+    "semantic_hash": "977c6468d52939e28237098156d59fa8"
   },
   "Tests/Axi.Repository.Specification.Test/Models/City.cs": {
-    "mtime": 1788474721.055796,
-    "seen": 1788476664.2237356,
-    "ast_hash": "01fd8ec47705a9a6f978b98bb3d29082",
-    "semantic_hash": "01fd8ec47705a9a6f978b98bb3d29082"
+    "mtime": 1788481086.219,
+    "seen": 1788481093.7597587,
+    "ast_hash": "f82ec089be7408af2071f936e48acb01",
+    "semantic_hash": "f82ec089be7408af2071f936e48acb01"
   },
   "Tests/Axi.Repository.Specification.Test/Models/Order.cs": {
-    "mtime": 1788474721.055796,
-    "seen": 1788476664.2237363,
-    "ast_hash": "bab7e97d893d41852c6c91a6853ccdb0",
-    "semantic_hash": "bab7e97d893d41852c6c91a6853ccdb0"
+    "mtime": 1788481086.224,
+    "seen": 1788481093.7597597,
+    "ast_hash": "4e628ae61e6c11997f67858db194bb0a",
+    "semantic_hash": "4e628ae61e6c11997f67858db194bb0a"
   },
   "Tests/Axi.Repository.Specification.Test/Models/OrderLine.cs": {
-    "mtime": 1788474721.055796,
-    "seen": 1788476664.223737,
-    "ast_hash": "1293f2001afefdd4d02b44f0eaf8f885",
-    "semantic_hash": "1293f2001afefdd4d02b44f0eaf8f885"
+    "mtime": 1788481086.229,
+    "seen": 1788481093.7597606,
+    "ast_hash": "b8c6d5df4c1ab358d46cbd9bf7adbe0f",
+    "semantic_hash": "b8c6d5df4c1ab358d46cbd9bf7adbe0f"
   },
   "Tests/Axi.Repository.Specification.Test/Models/Person.cs": {
-    "mtime": 1788474721.055796,
-    "seen": 1788476664.2237382,
-    "ast_hash": "355feb84b52bada014f1ddbe39c277f2",
-    "semantic_hash": "355feb84b52bada014f1ddbe39c277f2"
+    "mtime": 1788481086.234,
+    "seen": 1788481093.7597616,
+    "ast_hash": "678f60805914973c3681662cc17b9468",
+    "semantic_hash": "678f60805914973c3681662cc17b9468"
   },
   "Tests/Axi.Repository.Specification.Test/Models/PersonRow.cs": {
     "mtime": 1788474721.055796,
@@ -210,52 +210,52 @@
     "semantic_hash": "38b05942619cd27e8fc57e60664345df"
   },
   "Tests/Axi.Repository.Specification.Test/Specification/BothOrderingsSpec.cs": {
-    "mtime": 1788474721.056181,
-    "seen": 1788476664.223743,
-    "ast_hash": "2eca8ea101d51be4e5ce2984ae714ce2",
-    "semantic_hash": "2eca8ea101d51be4e5ce2984ae714ce2"
+    "mtime": 1788481086.309,
+    "seen": 1788481093.759768,
+    "ast_hash": "081a8383e1b1a671a1a1f5e40707c812",
+    "semantic_hash": "081a8383e1b1a671a1a1f5e40707c812"
   },
   "Tests/Axi.Repository.Specification.Test/Specification/EmptySpec.cs": {
-    "mtime": 1788474721.056181,
-    "seen": 1788476664.223744,
-    "ast_hash": "4bab90ccbaaa44af039f1b84335bfcd5",
-    "semantic_hash": "4bab90ccbaaa44af039f1b84335bfcd5"
+    "mtime": 1788481086.323,
+    "seen": 1788481093.7597687,
+    "ast_hash": "56808f211f71f4d02a0421381e782a19",
+    "semantic_hash": "56808f211f71f4d02a0421381e782a19"
   },
   "Tests/Axi.Repository.Specification.Test/Specification/OrderingSpec.cs": {
-    "mtime": 1788474721.056181,
-    "seen": 1788476664.2237449,
-    "ast_hash": "16c097dc047c12b5cc7c6f8670195b77",
-    "semantic_hash": "16c097dc047c12b5cc7c6f8670195b77"
+    "mtime": 1788481086.314,
+    "seen": 1788481093.75977,
+    "ast_hash": "14fce844580b5c736043387c623457e6",
+    "semantic_hash": "14fce844580b5c736043387c623457e6"
   },
   "Tests/Axi.Repository.Specification.Test/Specification/PersonCriteriaSpec.cs": {
-    "mtime": 1788474721.056181,
-    "seen": 1788476664.2237458,
-    "ast_hash": "8d8e053901f1788022f84ad1056431dd",
-    "semantic_hash": "8d8e053901f1788022f84ad1056431dd"
+    "mtime": 1788481086.304,
+    "seen": 1788481093.7597709,
+    "ast_hash": "7f48bb102cced8c1f9a0052be37cb897",
+    "semantic_hash": "7f48bb102cced8c1f9a0052be37cb897"
   },
   "Tests/Axi.Repository.Specification.Test/Specification/PersonIncludeSpec.cs": {
-    "mtime": 1788474721.056181,
-    "seen": 1788476664.2237465,
-    "ast_hash": "2f6cfe239c55d6b439504a634a9d3a8a",
-    "semantic_hash": "2f6cfe239c55d6b439504a634a9d3a8a"
+    "mtime": 1788481086.328,
+    "seen": 1788481093.7597716,
+    "ast_hash": "dcf99ff622d08933b59937ce2e9f22b7",
+    "semantic_hash": "dcf99ff622d08933b59937ce2e9f22b7"
   },
   "Tests/Axi.Repository.Specification.Test/Specification/PersonOptionsSpec.cs": {
-    "mtime": 1788474721.056181,
-    "seen": 1788476664.2237473,
-    "ast_hash": "103ea649a38dd65aaa3f3e3e8e1974dc",
-    "semantic_hash": "103ea649a38dd65aaa3f3e3e8e1974dc"
+    "mtime": 1788481086.318,
+    "seen": 1788481093.759773,
+    "ast_hash": "39132f16ac7f40ac067663abab80c941",
+    "semantic_hash": "39132f16ac7f40ac067663abab80c941"
   },
   "Tests/Axi.Repository.Specification.Test/Tests/BaseSpecificationTests.cs": {
-    "mtime": 1788474721.056181,
-    "seen": 1788476664.2237484,
-    "ast_hash": "6ec28bf1a2f0a61bf620b160d40c6d16",
-    "semantic_hash": "6ec28bf1a2f0a61bf620b160d40c6d16"
+    "mtime": 1788481086.239,
+    "seen": 1788481093.7597737,
+    "ast_hash": "5e86719f0ea6e392adc5532e033a2145",
+    "semantic_hash": "5e86719f0ea6e392adc5532e033a2145"
   },
   "Tests/Axi.Repository.Specification.Test/Tests/InMemorySpecificationEvaluatorTests.cs": {
-    "mtime": 1788474721.0564897,
-    "seen": 1788476664.2237492,
-    "ast_hash": "162d7af9443b17bee8e15ddeb0f4a19e",
-    "semantic_hash": "162d7af9443b17bee8e15ddeb0f4a19e"
+    "mtime": 1788481086.244,
+    "seen": 1788481093.759775,
+    "ast_hash": "1e03055cd51283d9a4d8be6fda4b185b",
+    "semantic_hash": "1e03055cd51283d9a4d8be6fda4b185b"
   },
   "Tests/Axi.Repository.Test/Axi.Repository.Test.csproj": {
     "mtime": 1788478441.7651336,
@@ -264,16 +264,16 @@
     "semantic_hash": "59aa94b3a2540cd2b59cf4bd692bde26"
   },
   "Tests/Axi.Repository.Test/Data/TestDb.cs": {
-    "mtime": 1788474721.0566297,
-    "seen": 1788476664.223752,
-    "ast_hash": "86ff34d03320a7cb3b1edbd5d587dd7e",
-    "semantic_hash": "86ff34d03320a7cb3b1edbd5d587dd7e"
+    "mtime": 1788481086.26,
+    "seen": 1788481093.7597797,
+    "ast_hash": "e7469a6cc3298dd530738b03a09d5314",
+    "semantic_hash": "e7469a6cc3298dd530738b03a09d5314"
   },
   "Tests/Axi.Repository.Test/Data/TestDbContext.cs": {
-    "mtime": 1788474721.0566893,
-    "seen": 1788476664.223753,
-    "ast_hash": "589017ec35def9fe6a0da0651ccacdda",
-    "semantic_hash": "589017ec35def9fe6a0da0651ccacdda"
+    "mtime": 1788481086.265,
+    "seen": 1788481093.759781,
+    "ast_hash": "1408f588c8e6a0c1142f1a4843973fd2",
+    "semantic_hash": "1408f588c8e6a0c1142f1a4843973fd2"
   },
   "Tests/Axi.Repository.Test/Models/PersonRow.cs": {
     "mtime": 1788474721.0566893,
@@ -282,28 +282,28 @@
     "semantic_hash": "be66c41e12bd29cf14798905a7ad7524"
   },
   "Tests/Axi.Repository.Test/Repository/PersonReadRepository.cs": {
-    "mtime": 1788478339.7630322,
-    "seen": 1788478791.5955853,
-    "ast_hash": "21ce3ffa2a0db94fcdde916a014516e4",
-    "semantic_hash": "21ce3ffa2a0db94fcdde916a014516e4"
+    "mtime": 1788481086.333,
+    "seen": 1788481093.7597866,
+    "ast_hash": "03327c1b03ecee13bc076f202222f7ba",
+    "semantic_hash": "03327c1b03ecee13bc076f202222f7ba"
   },
   "Tests/Axi.Repository.Test/Repository/PersonWriteRepository.cs": {
-    "mtime": 1788478339.8570323,
-    "seen": 1788478791.5955863,
-    "ast_hash": "211e597bf62f54fe622162af8dba9d97",
-    "semantic_hash": "211e597bf62f54fe622162af8dba9d97"
+    "mtime": 1788481086.338,
+    "seen": 1788481093.7597873,
+    "ast_hash": "9d8ce6bb9ab918958010dd9c042747a7",
+    "semantic_hash": "9d8ce6bb9ab918958010dd9c042747a7"
   },
   "Tests/Axi.Repository.Test/Tests/PageRequestTests.cs": {
-    "mtime": 1788474721.0570433,
-    "seen": 1788476664.2237592,
-    "ast_hash": "d94be4f6b7e47a2f5b7b3fc20272d616",
-    "semantic_hash": "d94be4f6b7e47a2f5b7b3fc20272d616"
+    "mtime": 1788481086.274,
+    "seen": 1788481093.7597902,
+    "ast_hash": "a45bff83ee197f752e5faa2ebdc34995",
+    "semantic_hash": "a45bff83ee197f752e5faa2ebdc34995"
   },
   "Tests/Axi.Repository.Test/Tests/PagedResultTests.cs": {
-    "mtime": 1788474721.0570433,
-    "seen": 1788476664.2237601,
-    "ast_hash": "488360dbd04bb2997055cda2b85c7270",
-    "semantic_hash": "488360dbd04bb2997055cda2b85c7270"
+    "mtime": 1788481086.27,
+    "seen": 1788481093.759792,
+    "ast_hash": "5e602fa09eaf852c5299e04f8419a91f",
+    "semantic_hash": "5e602fa09eaf852c5299e04f8419a91f"
   },
   "buildNuget.sh": {
     "mtime": 1788474721.0570433,
@@ -318,16 +318,16 @@
     "semantic_hash": "512ca96d7d7a9eef987a25e5d366be0a"
   },
   "Tests/Axi.Repository.Test/Repository/PersonCursorRepository.cs": {
-    "mtime": 1788478340.0480325,
-    "seen": 1788478791.5955834,
-    "ast_hash": "178fa00bb4d48b12a63cf3b21184f7d5",
-    "semantic_hash": "178fa00bb4d48b12a63cf3b21184f7d5"
+    "mtime": 1788481086.353,
+    "seen": 1788481093.7597835,
+    "ast_hash": "3cd48a534c51fbe2b3e90b30e008af7d",
+    "semantic_hash": "3cd48a534c51fbe2b3e90b30e008af7d"
   },
   "Tests/Axi.Repository.Test/Repository/PersonPageRepository.cs": {
-    "mtime": 1788478339.9530325,
-    "seen": 1788478791.5955846,
-    "ast_hash": "aea87f7aa5da8adbb73f851d945f80a6",
-    "semantic_hash": "aea87f7aa5da8adbb73f851d945f80a6"
+    "mtime": 1788481086.348,
+    "seen": 1788481093.7597842,
+    "ast_hash": "59746898bc7e71d6fc6d83a7651a2293",
+    "semantic_hash": "59746898bc7e71d6fc6d83a7651a2293"
   },
   "Source/Axi.Repository.Specification/Repository/SpecificationReadRepositoryBase.cs": {
     "mtime": 1788479389.3040586,
@@ -402,39 +402,87 @@
     "semantic_hash": "1921acfa49c1e40fce299108020fd51b"
   },
   "Tests/Axi.Repository.Specification.Test/Tests/SpecificationReadRepositoryBaseTests.cs": {
-    "mtime": 1788478586.4892771,
-    "seen": 1788478791.595578,
-    "ast_hash": "6926dbd887ad6f7a2c8f6d63f4add472",
-    "semantic_hash": "6926dbd887ad6f7a2c8f6d63f4add472"
+    "mtime": 1788481086.249,
+    "seen": 1788481093.7597773,
+    "ast_hash": "16efccbc22aa56591bd8e368d8669698",
+    "semantic_hash": "16efccbc22aa56591bd8e368d8669698"
   },
   "Tests/Axi.Repository.Test/Tests/CursorReadRepositoryBaseTests.cs": {
-    "mtime": 1788478341.1590335,
-    "seen": 1788478791.5955873,
-    "ast_hash": "00fd74fda09a50b8fb715c8029130683",
-    "semantic_hash": "00fd74fda09a50b8fb715c8029130683"
+    "mtime": 1788481086.299,
+    "seen": 1788481093.7597888,
+    "ast_hash": "b1463deb7cc2a12ccb11a5308b91c2c5",
+    "semantic_hash": "b1463deb7cc2a12ccb11a5308b91c2c5"
   },
   "Tests/Axi.Repository.Test/Tests/PagedReadRepositoryBaseTests.cs": {
-    "mtime": 1788478340.9210334,
-    "seen": 1788478791.5955899,
-    "ast_hash": "729b59f2cb56ab7ad73fb895a11322b2",
-    "semantic_hash": "729b59f2cb56ab7ad73fb895a11322b2"
+    "mtime": 1788481086.289,
+    "seen": 1788481093.7597911,
+    "ast_hash": "f699994ead39dfeaa0bbcea2c4362209",
+    "semantic_hash": "f699994ead39dfeaa0bbcea2c4362209"
   },
   "Tests/Axi.Repository.Test/Tests/ReadRepositoryBaseTests.cs": {
-    "mtime": 1788478340.4290328,
-    "seen": 1788478791.595592,
-    "ast_hash": "17013775d880cc9a83d044e7dd3057d1",
-    "semantic_hash": "17013775d880cc9a83d044e7dd3057d1"
+    "mtime": 1788481086.284,
+    "seen": 1788481093.759794,
+    "ast_hash": "6298aec3ec3af2eef21d421eb0b9bee7",
+    "semantic_hash": "6298aec3ec3af2eef21d421eb0b9bee7"
   },
   "Tests/Axi.Repository.Test/Tests/UnitOfWorkBaseTests.cs": {
-    "mtime": 1788478340.2050326,
-    "seen": 1788478791.595593,
-    "ast_hash": "3d6eea85cf2405c27c419d94d2ce4ad7",
-    "semantic_hash": "3d6eea85cf2405c27c419d94d2ce4ad7"
+    "mtime": 1788481086.294,
+    "seen": 1788481093.759795,
+    "ast_hash": "d7e35458104518098ffb9dbe320e0756",
+    "semantic_hash": "d7e35458104518098ffb9dbe320e0756"
   },
   "Tests/Axi.Repository.Test/Tests/WriteRepositoryBaseTests.cs": {
-    "mtime": 1788478340.6830332,
-    "seen": 1788478791.5955937,
-    "ast_hash": "3cceb1af1efd893808250bad436d4fb7",
-    "semantic_hash": "3cceb1af1efd893808250bad436d4fb7"
+    "mtime": 1788481086.279,
+    "seen": 1788481093.759796,
+    "ast_hash": "34c8d7fef0480d4f54217ed260831262",
+    "semantic_hash": "34c8d7fef0480d4f54217ed260831262"
+  },
+  "Source/Axi.Repository.Specification/Abstractions/Repository/ISpecificationQuerySource.cs": {
+    "mtime": 1788480955.1744998,
+    "seen": 1788481093.7597115,
+    "ast_hash": "2fa12335eade8460185b072a445ea9db",
+    "semantic_hash": "2fa12335eade8460185b072a445ea9db"
+  },
+  "Source/Axi.Repository.Specification/Repository/SpecificationQuerySourceBase.cs": {
+    "mtime": 1788480955.2724998,
+    "seen": 1788481093.7597296,
+    "ast_hash": "0ef64dc0787e66b71a94d60f58fc730f",
+    "semantic_hash": "0ef64dc0787e66b71a94d60f58fc730f"
+  },
+  "Source/Axi.Repository/Abstractions/Repository/IQuerySource.cs": {
+    "mtime": 1788480954.9084995,
+    "seen": 1788481093.7597373,
+    "ast_hash": "2046b17f86b5c6a3402e77a359c3c08a",
+    "semantic_hash": "2046b17f86b5c6a3402e77a359c3c08a"
+  },
+  "Source/Axi.Repository/Repository/QuerySourceBase.cs": {
+    "mtime": 1788480974.793519,
+    "seen": 1788481093.7597506,
+    "ast_hash": "8d6cf9e4a7b5b45ed5df17deb10beb5f",
+    "semantic_hash": "8d6cf9e4a7b5b45ed5df17deb10beb5f"
+  },
+  "Tests/Axi.Repository.Specification.Test/Repository/PersonSpecificationQuerySource.cs": {
+    "mtime": 1788481053.9375963,
+    "seen": 1788481093.7597647,
+    "ast_hash": "58d56eb9c900483ad74d6a9a28d3df9f",
+    "semantic_hash": "58d56eb9c900483ad74d6a9a28d3df9f"
+  },
+  "Tests/Axi.Repository.Specification.Test/Tests/SpecificationQuerySourceBaseTests.cs": {
+    "mtime": 1788481086.255,
+    "seen": 1788481093.759776,
+    "ast_hash": "74d50931a758fdbcdcdf6503a6ea6802",
+    "semantic_hash": "74d50931a758fdbcdcdf6503a6ea6802"
+  },
+  "Tests/Axi.Repository.Test/Repository/PersonQuerySource.cs": {
+    "mtime": 1788481086.343,
+    "seen": 1788481093.7597852,
+    "ast_hash": "4a4dacd073c995369868d2fab009a2e8",
+    "semantic_hash": "4a4dacd073c995369868d2fab009a2e8"
+  },
+  "Tests/Axi.Repository.Test/Tests/QuerySourceBaseTests.cs": {
+    "mtime": 1788481091.918,
+    "seen": 1788481093.7597928,
+    "ast_hash": "40c2ecdedfe596697def1fe48bce7733",
+    "semantic_hash": "40c2ecdedfe596697def1fe48bce7733"
   }
 }
