@@ -1,6 +1,7 @@
+using Axi.Repository.Test.Data;
 using Axi.Repository.Test.Repository;
 
-namespace Axi.Repository.Test;
+namespace Axi.Repository.Test.Tests;
 
 public sealed class ReadRepositoryBaseTests
 {

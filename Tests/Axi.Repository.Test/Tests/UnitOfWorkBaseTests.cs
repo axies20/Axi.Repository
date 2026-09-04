@@ -1,8 +1,9 @@
 using Axi.Repository.Repository;
+using Axi.Repository.Test.Data;
 using Axi.Repository.Test.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace Axi.Repository.Test;
+namespace Axi.Repository.Test.Tests;
 
 public sealed class UnitOfWorkBaseTests
 {

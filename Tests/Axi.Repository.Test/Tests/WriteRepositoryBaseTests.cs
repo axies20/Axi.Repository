@@ -1,8 +1,9 @@
+using Axi.Repository.Test.Data;
 using Axi.Repository.Test.Models;
 using Axi.Repository.Test.Repository;
 using Microsoft.EntityFrameworkCore;
 
-namespace Axi.Repository.Test;
+namespace Axi.Repository.Test.Tests;
 
 public sealed class WriteRepositoryBaseTests
 {

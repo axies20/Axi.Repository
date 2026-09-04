@@ -1,7 +1,8 @@
 using Axi.Repository.Specification.Specification;
+using Axi.Repository.Specification.Test.Models;
 using Axi.Repository.Specification.Test.Specification;
 
-namespace Axi.Repository.Specification.Test;
+namespace Axi.Repository.Specification.Test.Tests;
 
 public sealed class BaseSpecificationTests
 {

@@ -5,7 +5,7 @@ using Axi.Repository.Specification.Test.Repository;
 using Axi.Repository.Specification.Test.Specification;
 using Microsoft.EntityFrameworkCore;
 
-namespace Axi.Repository.Specification.Test;
+namespace Axi.Repository.Specification.Test.Tests;
 
 public sealed class SpecificationReadRepositoryBaseTests
 {

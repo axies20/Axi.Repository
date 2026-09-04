@@ -1,4 +1,4 @@
-﻿namespace Axi.Repository.Specification.Test;
+﻿namespace Axi.Repository.Specification.Test.Models;
 
 public sealed class OrderLine
 {

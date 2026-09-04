@@ -22,6 +22,7 @@ queries.
 Core repository abstractions and base implementations:
 
 - `IReadRepository<T>` / `ReadRepositoryBase<T, TDbContext>` - Read operations
+- `IQuerySource<T>` / `QuerySourceBase<T, TDbContext>` - Deferred predicate-based `IQueryable<T>` access
 - `IPagedReadRepository<T>` / `PagedReadRepositoryBase<T, TDbContext>` - Offset pagination
 - `ICursorReadRepository<T, TCursor>` / `CursorReadRepositoryBase<T, TCursor, TDbContext>` - Keyset pagination
 - `IWriteRepository<T>` / `WriteRepositoryBase<T, TDbContext>` - Write operations
@@ -36,6 +37,7 @@ Specification pattern implementation for EF Core:
 - `BaseSpecification<T>` - Fluent specification builder
 - `ISpecificationReadRepository<T>` - Repository with specification support
 - `SpecificationReadRepositoryBase<T, TDbContext>` - EF Core specification repository base
+- `ISpecificationQuerySource<T>` / `SpecificationQuerySourceBase<T, TDbContext>` - Deferred specification-based `IQueryable<T>` access
 - Built-in evaluators for criteria, ordering, includes, split queries
 
 ## Installation
@@ -103,6 +105,26 @@ var product = await repository.FirstOrDefaultAsync(
     cancellationToken
 );
 ```
+
+### Advanced query sources
+
+Use a query source when the caller must compose an EF Core query before executing it. The returned
+`IQueryable<T>` is deferred and must be enumerated while the database context is alive.
+
+```csharp
+public sealed class ProductQuerySource(YourDbContext context)
+    : QuerySourceBase<Product, YourDbContext>(context)
+{
+}
+
+var query = querySource.Query(product => product.Price >= 100);
+var products = await query
+    .OrderBy(product => product.Name)
+    .ToListAsync(cancellationToken);
+```
+
+For specification-driven composition, use `SpecificationQuerySourceBase<Product, YourDbContext>`;
+passing `null` to `Query` returns the unfiltered entity query.
 
 ## Core Interfaces
 

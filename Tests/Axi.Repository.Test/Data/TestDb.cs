@@ -1,7 +1,7 @@
 ﻿using Axi.Repository.Test.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace Axi.Repository.Test;
+namespace Axi.Repository.Test.Data;
 
 public static class TestDb
 {

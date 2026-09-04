@@ -1,6 +1,6 @@
 using Axi.Repository.Models;
 
-namespace Axi.Repository.Test;
+namespace Axi.Repository.Test.Tests;
 
 public sealed class PagedResultTests
 {
